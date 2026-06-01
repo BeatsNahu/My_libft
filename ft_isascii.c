@@ -6,14 +6,14 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 11:58:14 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/04/25 15:42:56 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/01 20:17:54 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_isascii(int c)
 {
-	if ((unsigned int) c >= 0 && (unsigned int) c <= 127)
+	if ((unsigned int) c <= 127)
 		return (1);
 	return (0);
 }

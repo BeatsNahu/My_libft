@@ -6,14 +6,16 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 20:41:53 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/05/20 21:11:25 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/01 21:14:47 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst != NULL)
+	if (lst == NULL)
+		return (lst);
+	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
 }

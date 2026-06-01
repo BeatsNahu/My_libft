@@ -6,15 +6,15 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:14:24 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/05/19 13:32:09 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/01 21:44:36 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
-	char			*result;
+	size_t	i;
+	char	*result;
 
 	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!result)
@@ -25,5 +25,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		result[i] = f(i, s[i]);
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }
