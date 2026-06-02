@@ -6,7 +6,7 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 17:21:55 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/05/31 08:39:23 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:15:21 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,6 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
 	char	*new_str;
 
 	if (!s)
@@ -27,13 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new_str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!new_str)
 		return (NULL);
-	j = 0;
-	while (j < i)
-	{
-		new_str[j] = s[start];
-		j++;
-		start++;
-	}
-	new_str[j] = '\0';
+	ft_memcpy(new_str, &s[start], i);
+	new_str[i] = '\0';
 	return (new_str);
 }

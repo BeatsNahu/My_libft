@@ -6,7 +6,7 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:04:14 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/05/03 11:31:49 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:34:58 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,5 @@ int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	else
-		return (c);
+	return (c);
 }

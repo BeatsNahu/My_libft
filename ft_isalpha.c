@@ -6,7 +6,7 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 11:36:08 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/04/25 15:17:33 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/02 19:10:04 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,6 +17,5 @@ int	ft_isalpha(int c)
 		return (1);
 	else if (c >= 'A' && c <= 'Z')
 		return (1);
-	else
-		return (0);
+	return (0);
 }

@@ -6,27 +6,20 @@
 /*   By: alopez-t <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 18:36:52 by alopez-t          #+#    #+#             */
-/*   Updated: 2026/06/01 21:44:57 by alopez-t         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:56:47 by alopez-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 static char	*substr_from(size_t start, size_t end, const char *str)
 {
-	size_t	i;
 	char	*new_str;
 
 	new_str = (char *)malloc(sizeof(char) * ((end - start) + 1));
 	if (!new_str)
 		return (NULL);
-	i = 0;
-	while (start < end)
-	{
-		new_str[i] = str[start];
-		i++;
-		start++;
-	}
-	new_str[i] = '\0';
+	ft_memcpy(new_str, &str[start], (end - start));
+	new_str[end - start] = '\0';
 	return (new_str);
 }
 
