@@ -13,7 +13,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
