@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	limit;
 
 	limit = (size_t) -1;
-	if (nmemb <= 0 || size <= 0)
+	if (nmemb == 0 || size == 0)
 	{
 		ptr = malloc(1);
 		return (ptr);
