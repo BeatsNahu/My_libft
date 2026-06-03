@@ -27,7 +27,7 @@ static int	count_words(char const *s, char c)
 	return (counted);
 }
 
-static void	free_all(char **result, int reached)
+static void	*free_all(char **result, int reached)
 {
 	while (reached > 0)
 	{
@@ -35,9 +35,10 @@ static void	free_all(char **result, int reached)
 		free(result[reached]);
 	}
 	free(result);
+	return (NULL);
 }
 
-static int	process_words(char const *s, char c, char **result, int *i, int j)
+static char	*process_words(char const *s, char c, int *i)
 {
 	int	start;
 	int	len;
@@ -46,10 +47,7 @@ static int	process_words(char const *s, char c, char **result, int *i, int j)
 	while (s[*i] != c && s[*i] != '\0')
 		(*i)++;
 	len = *i - start;
-	result[j] = ft_substr(s, start, len);
-	if (!result[j])
-		return (0);
-	return (1);
+	return (ft_substr(s, start, len));
 }
 
 char	**ft_split(char const *s, char c)
@@ -65,15 +63,13 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		while (s[i] == c)
 			i++;
-		else
+		if (s[i] != '\0')
 		{
-			if (!process_words(s, c, result, &i, j))
-			{
-				free_all(result, j);
-				return (NULL);
-			}
+			result[j] = process_words(s, c, &i);
+			if (!result[j])
+				return (free_all(result, j));
 			j++;
 		}
 	}
